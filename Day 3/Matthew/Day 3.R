@@ -18,6 +18,7 @@ library(summarytools)
 
 
 # Working directory: make sure the correct location
+setwd("/Users/mxballin/Documents/GitHub/HASS2024/Day 3/Matthew")
 #Load data: Read in a CSV file
 sdata <- read_csv("ardc_ss3.csv")
 
@@ -28,7 +29,8 @@ sdata <- read_csv("ardc_ss3.csv")
 # mydata <- read_dta("StataFile.dta")
 
 
-
+#What are the effects of place-based geosocial indicators, socio-demographic background, and
+#education on individual earnings?
 
 
 #######################################
@@ -49,6 +51,8 @@ summary(sdata$wkp2019)
 # What does the distribution of earnings look like? (skewed right)
 # Histogram function in base R -- hist() -- can we guess what the code should look like?
 # hist(...)
+
+hist(sdata$wkp2019)
 
 # Using ggplot to plot the density -- while filtering out the missing values of wkp2019
 sdata %>% 
@@ -209,7 +213,6 @@ edata <- edata %>%
 table(edata$m2m)
 typeof(edata$m2m)
 
-
 # Educational attainment: need to combine 'school' and 'post-school qualifications'
 # "HS" will be the reference category, but that means I'll make it 'out of order'
 
@@ -225,7 +228,6 @@ edata <- edata %>%
 
 
 table(edata$educ)
-
 
 
 
@@ -372,7 +374,6 @@ adata <- edata %>%
 #            !is.na(m2m) & 
 #            !is.na(educ), etc., etc.
 #   )
-
 
 ################################################
 # Descriptive Statistics for Numeric Variables #

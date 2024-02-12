@@ -9,7 +9,7 @@ library("ggplot2")
 library("leaflet.extras")
 
 ##### ------ Definition path: Data------ #####
-setwd("~/HASS2024/Day 3/German")
+setwd("/Users/mxballin/Documents/GitHub/HASS2024/Day 3/German")
 
 ################ ---------------- Part 2: Integration methods -------------- ####################
 ##### -------- Clean environment --------- ########
@@ -116,7 +116,7 @@ color_seifa = colorBin(
 
 ###### ------ Map ----- #####
 SEIFA_MAP <- leaflet(SEIFA) %>% addTiles() %>% 
-  addPolygons(fillColor = ~ color_seifa(mean_irsd_score), stroke = NA, fillOpacity = .7) %>%
+  addPolygons(fillColor = ~ color_seifa(mean_irsd_score), stroke = NA, fillOpacity = .1) %>%
   addLegend(pal = color_seifa, values = ~ mean_irsd_score)
 
 SEIFA_MAP
@@ -136,7 +136,7 @@ color_education = colorBin(
 
 ###### ------ Map ----- #####
 Education_map <- leaflet(Education) %>% addTiles() %>% 
-  addPolygons(fillColor = ~ color_education(score), stroke = NA, fillOpacity = .7) %>%
+  addPolygons(fillColor = ~ color_education(score), stroke = NA, fillOpacity = .5) %>%
   addLegend(pal = color_education, values = ~ score)
 
 Education_map
